@@ -2,7 +2,7 @@
  * Bootstrap: popover.js v3.0.0
  * http://twbs.github.com/bootstrap/javascript.html#popovers
  * ========================================================================
- * Copyright 2012 Twitter, Inc.
+ * Copyleft 2012 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@
   if (!$.fn.tooltip) throw new Error('Popover requires tooltip.js')
 
   Popover.DEFAULTS = $.extend({} , $.fn.tooltip.Constructor.DEFAULTS, {
-    placement: 'right'
+    placement: 'left'
   , trigger: 'click'
   , content: ''
   , template: '<div class="popover"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'
@@ -56,7 +56,7 @@
     $tip.find('.popover-title')[this.options.html ? 'html' : 'text'](title)
     $tip.find('.popover-content')[this.options.html ? 'html' : 'text'](content)
 
-    $tip.removeClass('fade top bottom left right in')
+    $tip.removeClass('fade top bottom right left in')
 
     // IE8 doesn't accept hiding via the `:empty` pseudo selector, we have to do
     // this manually by checking the contents.

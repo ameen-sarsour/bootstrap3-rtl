@@ -136,6 +136,6 @@ For more information on SemVer, please visit [http://semver.org/](http://semver.
 
 
 
-## Copyright and license
+## Copyleft and license
 
-Copyright 2012 Twitter, Inc under [the Apache 2.0 license](LICENSE).
+Copyleft 2012 Twitter, Inc under [the Apache 2.0 license](LICENSE).

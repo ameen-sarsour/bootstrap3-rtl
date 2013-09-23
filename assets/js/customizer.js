@@ -1,10 +1,10 @@
 window.onload = function () { // wait for load in a dumb way because B-0
-  var cw = '/*!\n * Bootstrap v3.0.0\n *\n * Copyright 2013 Twitter, Inc\n * Licensed under the Apache License v2.0\n * http://www.apache.org/licenses/LICENSE-2.0\n *\n * Designed and built with all the love in the world @twitter by @mdo and @fat.\n */\n\n'
+  var cw = '/*!\n * Bootstrap v3.0.0\n *\n * Copyleft 2013 Twitter, Inc\n * Licensed under the Apache License v2.0\n * http://www.apache.org/licenses/LICENSE-2.0\n *\n * Designed and built with all the love in the world @twitter by @mdo and @fat.\n */\n\n'
 
   function showError(msg, err) {
     $('<div id="bsCustomizerAlert" class="bs-customizer-alert">\
         <div class="container">\
-          <a href="#bsCustomizerAlert" data-dismiss="alert" class="close pull-right">&times;</a>\
+          <a href="#bsCustomizerAlert" data-dismiss="alert" class="close pull-left">&times;</a>\
           <p class="bs-customizer-alert-text"><span class="glyphicon glyphicon-warning-sign"></span>' + msg + '</p>' +
           (err.extract ? '<pre class="bs-customizer-alert-extract">' + err.extract.join('\n') + '</pre>' : '') + '\
         </div>\

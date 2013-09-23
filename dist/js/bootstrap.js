@@ -1,6 +1,6 @@
 /**
 * bootstrap.js v3.0.0 by @fat and @mdo
-* Copyright 2013 Twitter Inc.
+* Copyleft 2013 Twitter Inc.
 * http://www.apache.org/licenses/LICENSE-2.0
 */
 if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
@@ -9,7 +9,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
  * Bootstrap: transition.js v3.0.0
  * http://twbs.github.com/bootstrap/javascript.html#transitions
  * ========================================================================
- * Copyright 2013 Twitter, Inc.
+ * Copyleft 2013 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,7 +66,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
  * Bootstrap: alert.js v3.0.0
  * http://twbs.github.com/bootstrap/javascript.html#alerts
  * ========================================================================
- * Copyright 2013 Twitter, Inc.
+ * Copyleft 2013 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -165,7 +165,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
  * Bootstrap: button.js v3.0.0
  * http://twbs.github.com/bootstrap/javascript.html#buttons
  * ========================================================================
- * Copyright 2013 Twitter, Inc.
+ * Copyleft 2013 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -275,7 +275,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
  * Bootstrap: carousel.js v3.0.0
  * http://twbs.github.com/bootstrap/javascript.html#carousel
  * ========================================================================
- * Copyright 2012 Twitter, Inc.
+ * Copyleft 2012 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -375,7 +375,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     var $active   = this.$element.find('.item.active')
     var $next     = next || $active[type]()
     var isCycling = this.interval
-    var direction = type == 'next' ? 'left' : 'right'
+    var direction = type == 'next' ? 'right' : 'left'
     var fallback  = type == 'next' ? 'first' : 'last'
     var that      = this
 
@@ -493,7 +493,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
  * Bootstrap: collapse.js v3.0.0
  * http://twbs.github.com/bootstrap/javascript.html#collapse
  * ========================================================================
- * Copyright 2012 Twitter, Inc.
+ * Copyleft 2012 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -673,7 +673,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
  * Bootstrap: dropdown.js v3.0.0
  * http://twbs.github.com/bootstrap/javascript.html#dropdowns
  * ========================================================================
- * Copyright 2012 Twitter, Inc.
+ * Copyleft 2012 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -828,7 +828,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
  * Bootstrap: modal.js v3.0.0
  * http://twbs.github.com/bootstrap/javascript.html#modals
  * ========================================================================
- * Copyright 2012 Twitter, Inc.
+ * Copyleft 2012 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1076,7 +1076,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
  * http://twbs.github.com/bootstrap/javascript.html#tooltip
  * Inspired by the original jQuery.tipsy by Jason Frame
  * ========================================================================
- * Copyright 2012 Twitter, Inc.
+ * Copyleft 2012 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1229,7 +1229,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
 
       $tip
         .detach()
-        .css({ top: 0, left: 0, display: 'block' })
+        .css({ top: 0, right: 0, display: 'block' })
         .addClass(placement)
 
       this.options.container ? $tip.appendTo(this.options.container) : $tip.insertAfter(this.$element)
@@ -1245,12 +1245,12 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         var docScroll    = document.documentElement.scrollTop || document.body.scrollTop
         var parentWidth  = this.options.container == 'body' ? window.innerWidth  : $parent.outerWidth()
         var parentHeight = this.options.container == 'body' ? window.innerHeight : $parent.outerHeight()
-        var parentLeft   = this.options.container == 'body' ? 0 : $parent.offset().left
+        var parentRight   = this.options.container == 'body' ? 0 : $parent.offset().right
 
         placement = placement == 'bottom' && pos.top   + pos.height  + actualHeight - docScroll > parentHeight  ? 'top'    :
                     placement == 'top'    && pos.top   - docScroll   - actualHeight < 0                         ? 'bottom' :
-                    placement == 'right'  && pos.right + actualWidth > parentWidth                              ? 'left'   :
-                    placement == 'left'   && pos.left  - actualWidth < parentLeft                               ? 'right'  :
+                    placement == 'left'  && pos.left + actualWidth > parentWidth                              ? 'right'   :
+                    placement == 'right'   && pos.right  - actualWidth < parentRight                               ? 'left'  :
                     placement
 
         $tip
@@ -1273,14 +1273,14 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
 
     // manually read margins because getBoundingClientRect includes difference
     var marginTop = parseInt($tip.css('margin-top'), 10)
-    var marginLeft = parseInt($tip.css('margin-left'), 10)
+    var marginRight = parseInt($tip.css('margin-right'), 10)
 
     // we must check for NaN for ie 8/9
     if (isNaN(marginTop))  marginTop  = 0
-    if (isNaN(marginLeft)) marginLeft = 0
+    if (isNaN(marginRight)) marginRight = 0
 
     offset.top  = offset.top  + marginTop
-    offset.left = offset.left + marginLeft
+    offset.right = offset.right + marginRight
 
     $tip
       .offset(offset)
@@ -1298,9 +1298,9 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     if (/bottom|top/.test(placement)) {
       var delta = 0
 
-      if (offset.left < 0) {
-        delta       = offset.left * -2
-        offset.left = 0
+      if (offset.right < 0) {
+        delta       = offset.right * -2
+        offset.right = 0
 
         $tip.offset(offset)
 
@@ -1308,7 +1308,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
         actualHeight = $tip[0].offsetHeight
       }
 
-      this.replaceArrow(delta - width + actualWidth, actualWidth, 'left')
+      this.replaceArrow(delta - width + actualWidth, actualWidth, 'right')
     } else {
       this.replaceArrow(actualHeight - height, actualHeight, 'top')
     }
@@ -1325,7 +1325,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     var title = this.getTitle()
 
     $tip.find('.tooltip-inner')[this.options.html ? 'html' : 'text'](title)
-    $tip.removeClass('fade in top bottom left right')
+    $tip.removeClass('fade in top bottom right left')
   }
 
   Tooltip.prototype.hide = function () {
@@ -1374,10 +1374,10 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
   }
 
   Tooltip.prototype.getCalculatedOffset = function (placement, pos, actualWidth, actualHeight) {
-    return placement == 'bottom' ? { top: pos.top + pos.height,   left: pos.left + pos.width / 2 - actualWidth / 2  } :
-           placement == 'top'    ? { top: pos.top - actualHeight, left: pos.left + pos.width / 2 - actualWidth / 2  } :
-           placement == 'left'   ? { top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left - actualWidth } :
-        /* placement == 'right' */ { top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left + pos.width   }
+    return placement == 'bottom' ? { top: pos.top + pos.height,   right: pos.right + pos.width / 2 - actualWidth / 2  } :
+           placement == 'top'    ? { top: pos.top - actualHeight, right: pos.right + pos.width / 2 - actualWidth / 2  } :
+           placement == 'right'   ? { top: pos.top + pos.height / 2 - actualHeight / 2, right: pos.right - actualWidth } :
+        /* placement == 'left' */ { top: pos.top + pos.height / 2 - actualHeight / 2, right: pos.right + pos.width   }
   }
 
   Tooltip.prototype.getTitle = function () {
@@ -1462,7 +1462,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
  * Bootstrap: popover.js v3.0.0
  * http://twbs.github.com/bootstrap/javascript.html#popovers
  * ========================================================================
- * Copyright 2012 Twitter, Inc.
+ * Copyleft 2012 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1490,7 +1490,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
   if (!$.fn.tooltip) throw new Error('Popover requires tooltip.js')
 
   Popover.DEFAULTS = $.extend({} , $.fn.tooltip.Constructor.DEFAULTS, {
-    placement: 'right'
+    placement: 'left'
   , trigger: 'click'
   , content: ''
   , template: '<div class="popover"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'
@@ -1516,7 +1516,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
     $tip.find('.popover-title')[this.options.html ? 'html' : 'text'](title)
     $tip.find('.popover-content')[this.options.html ? 'html' : 'text'](content)
 
-    $tip.removeClass('fade top bottom left right in')
+    $tip.removeClass('fade top bottom right left in')
 
     // IE8 doesn't accept hiding via the `:empty` pseudo selector, we have to do
     // this manually by checking the contents.
@@ -1580,7 +1580,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
  * Bootstrap: scrollspy.js v3.0.0
  * http://twbs.github.com/bootstrap/javascript.html#scrollspy
  * ========================================================================
- * Copyright 2012 Twitter, Inc.
+ * Copyleft 2012 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1739,7 +1739,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
  * Bootstrap: tab.js v3.0.0
  * http://twbs.github.com/bootstrap/javascript.html#tabs
  * ========================================================================
- * Copyright 2012 Twitter, Inc.
+ * Copyleft 2012 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -1875,7 +1875,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
  * Bootstrap: affix.js v3.0.0
  * http://twbs.github.com/bootstrap/javascript.html#affix
  * ========================================================================
- * Copyright 2012 Twitter, Inc.
+ * Copyleft 2012 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.

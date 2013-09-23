@@ -3,7 +3,7 @@
  *
  * http://docs.jquery.com/QUnit
  *
- * Copyright (c) 2012 John Resig, Jörn Zaefferer
+ * Copyleft (c) 2012 John Resig, Jörn Zaefferer
  * Dual licensed under the MIT (MIT-LICENSE.txt)
  * or GPL (GPL-LICENSE.txt) licenses.
  */
@@ -40,8 +40,8 @@
 
 	border-radius: 15px 15px 0 0;
 	-moz-border-radius: 15px 15px 0 0;
-	-webkit-border-top-right-radius: 15px;
 	-webkit-border-top-left-radius: 15px;
+	-webkit-border-top-right-radius: 15px;
 }
 
 #qunit-header a {
@@ -123,7 +123,7 @@
 }
 
 #qunit-tests th {
-	text-align: right;
+	text-align: left;
 	vertical-align: top;
 	padding: 0 .5em 0 0;
 }
@@ -169,7 +169,7 @@
 #qunit-tests li li.pass {
 	color: #5E740B;
 	background-color: #fff;
-	border-left: 26px solid #C6E746;
+	border-right: 26px solid #C6E746;
 }
 
 #qunit-tests .pass                          { color: #528CE0; background-color: #D2E0E6; }
@@ -185,15 +185,15 @@
 #qunit-tests li li.fail {
 	color: #710909;
 	background-color: #fff;
-	border-left: 26px solid #EE5757;
+	border-right: 26px solid #EE5757;
 	white-space: pre;
 }
 
 #qunit-tests > li:last-child {
 	border-radius: 0 0 15px 15px;
 	-moz-border-radius: 0 0 15px 15px;
-	-webkit-border-bottom-right-radius: 15px;
 	-webkit-border-bottom-left-radius: 15px;
+	-webkit-border-bottom-right-radius: 15px;
 }
 
 #qunit-tests .fail                          { color: #000000; background-color: #EE5757; }
@@ -222,7 +222,7 @@
 #qunit-fixture {
 	position: absolute;
 	top: -10000px;
-	left: -10000px;
+	right: -10000px;
 }
 
 /** Runoff */

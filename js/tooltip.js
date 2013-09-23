@@ -3,7 +3,7 @@
  * http://twbs.github.com/bootstrap/javascript.html#tooltip
  * Inspired by the original jQuery.tipsy by Jason Frame
  * ========================================================================
- * Copyright 2012 Twitter, Inc.
+ * Copyleft 2012 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -156,7 +156,7 @@
 
       $tip
         .detach()
-        .css({ top: 0, left: 0, display: 'block' })
+        .css({ top: 0, right: 0, display: 'block' })
         .addClass(placement)
 
       this.options.container ? $tip.appendTo(this.options.container) : $tip.insertAfter(this.$element)
@@ -172,12 +172,12 @@
         var docScroll    = document.documentElement.scrollTop || document.body.scrollTop
         var parentWidth  = this.options.container == 'body' ? window.innerWidth  : $parent.outerWidth()
         var parentHeight = this.options.container == 'body' ? window.innerHeight : $parent.outerHeight()
-        var parentLeft   = this.options.container == 'body' ? 0 : $parent.offset().left
+        var parentRight   = this.options.container == 'body' ? 0 : $parent.offset().right
 
         placement = placement == 'bottom' && pos.top   + pos.height  + actualHeight - docScroll > parentHeight  ? 'top'    :
                     placement == 'top'    && pos.top   - docScroll   - actualHeight < 0                         ? 'bottom' :
-                    placement == 'right'  && pos.right + actualWidth > parentWidth                              ? 'left'   :
-                    placement == 'left'   && pos.left  - actualWidth < parentLeft                               ? 'right'  :
+                    placement == 'left'  && pos.left + actualWidth > parentWidth                              ? 'right'   :
+                    placement == 'right'   && pos.right  - actualWidth < parentRight                               ? 'left'  :
                     placement
 
         $tip
@@ -200,14 +200,14 @@
 
     // manually read margins because getBoundingClientRect includes difference
     var marginTop = parseInt($tip.css('margin-top'), 10)
-    var marginLeft = parseInt($tip.css('margin-left'), 10)
+    var marginRight = parseInt($tip.css('margin-right'), 10)
 
     // we must check for NaN for ie 8/9
     if (isNaN(marginTop))  marginTop  = 0
-    if (isNaN(marginLeft)) marginLeft = 0
+    if (isNaN(marginRight)) marginRight = 0
 
     offset.top  = offset.top  + marginTop
-    offset.left = offset.left + marginLeft
+    offset.right = offset.right + marginRight
 
     $tip
       .offset(offset)
@@ -225,9 +225,9 @@
     if (/bottom|top/.test(placement)) {
       var delta = 0
 
-      if (offset.left < 0) {
-        delta       = offset.left * -2
-        offset.left = 0
+      if (offset.right < 0) {
+        delta       = offset.right * -2
+        offset.right = 0
 
         $tip.offset(offset)
 
@@ -235,7 +235,7 @@
         actualHeight = $tip[0].offsetHeight
       }
 
-      this.replaceArrow(delta - width + actualWidth, actualWidth, 'left')
+      this.replaceArrow(delta - width + actualWidth, actualWidth, 'right')
     } else {
       this.replaceArrow(actualHeight - height, actualHeight, 'top')
     }
@@ -252,7 +252,7 @@
     var title = this.getTitle()
 
     $tip.find('.tooltip-inner')[this.options.html ? 'html' : 'text'](title)
-    $tip.removeClass('fade in top bottom left right')
+    $tip.removeClass('fade in top bottom right left')
   }
 
   Tooltip.prototype.hide = function () {
@@ -301,10 +301,10 @@
   }
 
   Tooltip.prototype.getCalculatedOffset = function (placement, pos, actualWidth, actualHeight) {
-    return placement == 'bottom' ? { top: pos.top + pos.height,   left: pos.left + pos.width / 2 - actualWidth / 2  } :
-           placement == 'top'    ? { top: pos.top - actualHeight, left: pos.left + pos.width / 2 - actualWidth / 2  } :
-           placement == 'left'   ? { top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left - actualWidth } :
-        /* placement == 'right' */ { top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left + pos.width   }
+    return placement == 'bottom' ? { top: pos.top + pos.height,   right: pos.right + pos.width / 2 - actualWidth / 2  } :
+           placement == 'top'    ? { top: pos.top - actualHeight, right: pos.right + pos.width / 2 - actualWidth / 2  } :
+           placement == 'right'   ? { top: pos.top + pos.height / 2 - actualHeight / 2, right: pos.right - actualWidth } :
+        /* placement == 'left' */ { top: pos.top + pos.height / 2 - actualHeight / 2, right: pos.right + pos.width   }
   }
 
   Tooltip.prototype.getTitle = function () {

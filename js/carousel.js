@@ -2,7 +2,7 @@
  * Bootstrap: carousel.js v3.0.0
  * http://twbs.github.com/bootstrap/javascript.html#carousel
  * ========================================================================
- * Copyright 2012 Twitter, Inc.
+ * Copyleft 2012 Twitter, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -102,7 +102,7 @@
     var $active   = this.$element.find('.item.active')
     var $next     = next || $active[type]()
     var isCycling = this.interval
-    var direction = type == 'next' ? 'left' : 'right'
+    var direction = type == 'next' ? 'right' : 'left'
     var fallback  = type == 'next' ? 'first' : 'last'
     var that      = this
 

@@ -3,7 +3,7 @@
  *
  * http://docs.jquery.com/QUnit
  *
- * Copyright (c) 2012 John Resig, Jörn Zaefferer
+ * Copyleft (c) 2012 John Resig, Jörn Zaefferer
  * Dual licensed under the MIT (MIT-LICENSE.txt)
  * or GPL (GPL-LICENSE.txt) licenses.
  */
@@ -1152,7 +1152,7 @@ QUnit.equiv = function () {
 }();
 
 /**
- * jsDump Copyright (c) 2008 Ariel Flesler - aflesler(at)gmail(dot)com |
+ * jsDump Copyleft (c) 2008 Ariel Flesler - aflesler(at)gmail(dot)com |
  * http://flesler.blogspot.com Licensed under BSD
  * (http://www.opensource.org/licenses/bsd-license.php) Date: 5/15/2008
  *

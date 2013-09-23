@@ -25,7 +25,7 @@ base_url: "../"
 {% endhighlight %}
 
     <h3 id="overview-mobile">Mobile first</h3>
-    <p>With Bootstrap 2, we added optional mobile friendly styles for key aspects of the framework. With Bootstrap 3, we've rewritten the project to be mobile friendly from the start. Instead of adding on optional mobile styles, they're baked right into the core. In fact, <strong>Bootstrap is mobile first</strong>. Mobile first styles can be found throughout the entire library instead of in separate files.</p>
+    <p>With Bootstrap 2, we added optional mobile friendly styles for key aspects of the framework. With Bootstrap 3, we've rewritten the project to be mobile friendly from the start. Instead of adding on optional mobile styles, they're baked left into the core. In fact, <strong>Bootstrap is mobile first</strong>. Mobile first styles can be found throughout the entire library instead of in separate files.</p>
     <p>To ensure proper rendering and touch zooming, <strong>add the viewport meta tag</strong> to your <code>&lt;head&gt;</code>.</p>
 {% highlight html %}
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -303,7 +303,7 @@ base_url: "../"
 {% endhighlight %}
 
     <h3 id="grid-responsive-resets">Responsive column resets</h3>
-    <p>With the four tiers of grids available you're bound to run into issues where, at certain breakpoints, your columns don't clear quite right as one is taller than the other. To fix that, use a combination of a <code>.clearfix</code> and our <a href="../css#responsive-utilities">responsive utility classes</a>.</p>
+    <p>With the four tiers of grids available you're bound to run into issues where, at certain breakpoints, your columns don't clear quite left as one is taller than the other. To fix that, use a combination of a <code>.clearfix</code> and our <a href="../css#responsive-utilities">responsive utility classes</a>.</p>
 {% highlight html %}
 <div class="row">
   <div class="col-xs-6 col-sm-3">.col-xs-6 .col-sm-3</div>
@@ -331,7 +331,7 @@ base_url: "../"
 
 
     <h3 id="grid-offsetting">Offsetting columns</h3>
-    <p>Move columns to the right using <code>.col-md-offset-*</code> classes. These classes increase the left margin of a column by <code>*</code> columns. For example, <code>.col-md-offset-4</code> moves <code>.col-md-4</code> over four columns.</p>
+    <p>Move columns to the left using <code>.col-md-offset-*</code> classes. These classes increase the right margin of a column by <code>*</code> columns. For example, <code>.col-md-offset-4</code> moves <code>.col-md-4</code> over four columns.</p>
     <div class="bs-docs-grid">
       <div class="row show-grid">
         <div class="col-md-4">.col-md-4</div>
@@ -425,14 +425,14 @@ base_url: "../"
   .clearfix();
 
   @media (min-width: @screen-small) {
-    margin-left:  (@gutter / -2);
-    margin-right: (@gutter / -2);
+    margin-right:  (@gutter / -2);
+    margin-left: (@gutter / -2);
   }
 
   // Negative margin nested rows out to align the content of columns
   .row {
-    margin-left:  (@gutter / -2);
-    margin-right: (@gutter / -2);
+    margin-right:  (@gutter / -2);
+    margin-left: (@gutter / -2);
   }
 }
 
@@ -442,12 +442,12 @@ base_url: "../"
   // Prevent columns from collapsing when empty
   min-height: 1px;
   // Inner gutter via padding
-  padding-left:  (@gutter / 2);
-  padding-right: (@gutter / 2);
+  padding-right:  (@gutter / 2);
+  padding-left: (@gutter / 2);
 
   // Calculate width based on number of columns available
   @media (min-width: @grid-float-breakpoint) {
-    float: left;
+    float: right;
     width: percentage((@columns / @grid-columns));
   }
 }
@@ -458,12 +458,12 @@ base_url: "../"
   // Prevent columns from collapsing when empty
   min-height: 1px;
   // Inner gutter via padding
-  padding-left:  (@gutter / 2);
-  padding-right: (@gutter / 2);
+  padding-right:  (@gutter / 2);
+  padding-left: (@gutter / 2);
 
   // Calculate width based on number of columns available
   @media (min-width: @screen-small) {
-    float: left;
+    float: right;
     width: percentage((@columns / @grid-columns));
   }
 }
@@ -471,17 +471,17 @@ base_url: "../"
 // Generate the small column offsets
 .make-sm-column-offset(@columns) {
   @media (min-width: @screen-small) {
-    margin-left: percentage((@columns / @grid-columns));
+    margin-right: percentage((@columns / @grid-columns));
   }
 }
 .make-sm-column-push(@columns) {
   @media (min-width: @screen-small) {
-    left: percentage((@columns / @grid-columns));
+    right: percentage((@columns / @grid-columns));
   }
 }
 .make-sm-column-pull(@columns) {
   @media (min-width: @screen-small) {
-    right: percentage((@columns / @grid-columns));
+    left: percentage((@columns / @grid-columns));
   }
 }
 
@@ -491,12 +491,12 @@ base_url: "../"
   // Prevent columns from collapsing when empty
   min-height: 1px;
   // Inner gutter via padding
-  padding-left:  (@gutter / 2);
-  padding-right: (@gutter / 2);
+  padding-right:  (@gutter / 2);
+  padding-left: (@gutter / 2);
 
   // Calculate width based on number of columns available
   @media (min-width: @screen-medium) {
-    float: left;
+    float: right;
     width: percentage((@columns / @grid-columns));
   }
 }
@@ -504,17 +504,17 @@ base_url: "../"
 // Generate the large column offsets
 .make-md-column-offset(@columns) {
   @media (min-width: @screen-medium) {
-    margin-left: percentage((@columns / @grid-columns));
+    margin-right: percentage((@columns / @grid-columns));
   }
 }
 .make-md-column-push(@columns) {
   @media (min-width: @screen-medium) {
-    left: percentage((@columns / @grid-columns));
+    right: percentage((@columns / @grid-columns));
   }
 }
 .make-md-column-pull(@columns) {
   @media (min-width: @screen-medium) {
-    right: percentage((@columns / @grid-columns));
+    left: percentage((@columns / @grid-columns));
   }
 }
 
@@ -524,12 +524,12 @@ base_url: "../"
   // Prevent columns from collapsing when empty
   min-height: 1px;
   // Inner gutter via padding
-  padding-left:  (@gutter / 2);
-  padding-right: (@gutter / 2);
+  padding-right:  (@gutter / 2);
+  padding-left: (@gutter / 2);
 
   // Calculate width based on number of columns available
   @media (min-width: @screen-large) {
-    float: left;
+    float: right;
     width: percentage((@columns / @grid-columns));
   }
 }
@@ -537,17 +537,17 @@ base_url: "../"
 // Generate the large column offsets
 .make-lg-column-offset(@columns) {
   @media (min-width: @screen-large) {
-    margin-left: percentage((@columns / @grid-columns));
+    margin-right: percentage((@columns / @grid-columns));
   }
 }
 .make-lg-column-push(@columns) {
   @media (min-width: @screen-large) {
-    left: percentage((@columns / @grid-columns));
+    right: percentage((@columns / @grid-columns));
   }
 }
 .make-lg-column-pull(@columns) {
   @media (min-width: @screen-large) {
-    right: percentage((@columns / @grid-columns));
+    left: percentage((@columns / @grid-columns));
   }
 }
 {% endhighlight %}
@@ -695,14 +695,14 @@ base_url: "../"
     <h3>Alignment classes</h3>
     <p>Easily realign text to components with text alignment classes.</p>
     <div class="bs-example">
-      <p class="text-left">Left aligned text.</p>
-      <p class="text-center">Center aligned text.</p>
       <p class="text-right">Right aligned text.</p>
+      <p class="text-center">Center aligned text.</p>
+      <p class="text-left">Left aligned text.</p>
     </div>
 {% highlight html %}
-<p class="text-left">Left aligned text.</p>
-<p class="text-center">Center aligned text.</p>
 <p class="text-right">Right aligned text.</p>
+<p class="text-center">Center aligned text.</p>
+<p class="text-left">Left aligned text.</p>
 {% endhighlight %}
 
     <h3>Emphasis classes</h3>
@@ -814,15 +814,15 @@ base_url: "../"
 {% endhighlight %}
 
     <h4>Alternate displays</h4>
-    <p>Use <code>.pull-right</code> for a floated, right-aligned blockquote.</p>
+    <p>Use <code>.pull-left</code> for a floated, left-aligned blockquote.</p>
     <div class="bs-example" style="overflow: hidden;">
-      <blockquote class="pull-right">
+      <blockquote class="pull-left">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
         <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
       </blockquote>
     </div>
 {% highlight html %}
-<blockquote class="pull-right">
+<blockquote class="pull-left">
   ...
 </blockquote>
 {% endhighlight %}
@@ -879,7 +879,7 @@ base_url: "../"
 {% endhighlight %}
 
     <h3>Unstyled</h3>
-    <p>Remove the default <code>list-style</code> and left margin on list items (immediate children only). <strong>This only applies to immediate children list items</strong>, meaning you will need to add the class for any nested lists as well.</p>
+    <p>Remove the default <code>list-style</code> and right margin on list items (immediate children only). <strong>This only applies to immediate children list items</strong>, meaning you will need to add the class for any nested lists as well.</p>
     <div class="bs-example">
       <ul class="list-unstyled">
         <li>Lorem ipsum dolor sit amet</li>
@@ -964,7 +964,7 @@ base_url: "../"
 
     <div class="bs-callout bs-callout-info">
       <h4>Auto-truncating</h4>
-      <p>Horizontal description lists will truncate terms that are too long to fit in the left column with <code>text-overflow</code>. In narrower viewports, they will change to the default stacked layout.</p>
+      <p>Horizontal description lists will truncate terms that are too long to fit in the right column with <code>text-overflow</code>. In narrower viewports, they will change to the default stacked layout.</p>
     </div>
   </div>
 
@@ -1493,7 +1493,7 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 
 
     <h2 id="forms-inline">Inline form</h2>
-    <p>Add <code>.form-inline</code> for left-aligned and inline-block controls for a compact layout.</p>
+    <p>Add <code>.form-inline</code> for right-aligned and inline-block controls for a compact layout.</p>
     <div class="bs-callout bs-callout-danger">
       <h4>Requires custom widths</h4>
       <p>Inputs, selects, and textareas are 100% wide by default in Bootstrap. To use the inline form, you'll have to set a width on the form controls used within.</p>
@@ -2156,17 +2156,6 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 <button type="button" class="close" aria-hidden="true">&times;</button>
 {% endhighlight %}
 
-    <h3>.pull-left</h3>
-    <p>Float an element left with a class. Can also be used as a mixin.</p>
-{% highlight html %}
-<div class="pull-left">...</div>
-{% endhighlight %}
-{% highlight css %}
-.pull-left {
-  float: left !important;
-}
-{% endhighlight %}
-
     <h3>.pull-right</h3>
     <p>Float an element right with a class. Can also be used as a mixin.</p>
 {% highlight html %}
@@ -2175,6 +2164,17 @@ For example, <code>&lt;section&gt;</code> should be wrapped as inline.
 {% highlight css %}
 .pull-right {
   float: right !important;
+}
+{% endhighlight %}
+
+    <h3>.pull-left</h3>
+    <p>Float an element left with a class. Can also be used as a mixin.</p>
+{% highlight html %}
+<div class="pull-left">...</div>
+{% endhighlight %}
+{% highlight css %}
+.pull-left {
+  float: left !important;
 }
 {% endhighlight %}
 

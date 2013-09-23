@@ -8,8 +8,8 @@ body {
 .header,
 .marketing,
 .footer {
-  padding-left: 15px;
   padding-right: 15px;
+  padding-left: 15px;
 }
 
 /* Custom page header */
@@ -65,8 +65,8 @@ body {
   .header,
   .marketing,
   .footer {
-    padding-left: 0;
     padding-right: 0;
+    padding-left: 0;
   }
   /* Space out the masthead */
   .header {

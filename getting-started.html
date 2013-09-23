@@ -584,7 +584,7 @@ bootstrap/
           </tr>
           <tr>
             <td>Tab alignments</td>
-            <td><code>.tabs-left</code> <code>.tabs-right</code> <code>.tabs-below</code></td>
+            <td><code>.tabs-right</code> <code>.tabs-left</code> <code>.tabs-below</code></td>
             <td class="text-muted">N/A</td>
           </tr>
         </tbody>
@@ -666,7 +666,7 @@ if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
     <h3>Safari percent rounding</h3>
     <p>In the latest Safari for Mac, its rendering engine has a little trouble with the long decimal places of our <code>.col-*-1</code> grid classes, meaning if you have 12 individual columns you'll notice they come up short compared to other rows of columns. There's not much we can do here (<a href="https://github.com/twbs/bootstrap/issues/9282">see #9282</a>) but you do have some options:</p>
     <ul>
-      <li>Add <code>.pull-right</code> to your last grid column to get the hard-right alignment</li>
+      <li>Add <code>.pull-left</code> to your last grid column to get the hard-left alignment</li>
       <li>Tweak your percentages manually to get the perfect rounding for Safari (more difficult than the first option)</li>
     </ul>
     <p>We'll keep an eye on this though and update our code if we have an easy solution.</p>
@@ -751,7 +751,7 @@ img { max-width: none; }
     <div class="page-header">
       <h1 id="license-faqs">License FAQs</h1>
     </div>
-    <p class="lead">Bootstrap is released under the Apache 2 license and is copyright {{ site.time | date: "%Y" }} Twitter. Boiled down to smaller chunks, it can be described with the following conditions.</p>
+    <p class="lead">Bootstrap is released under the Apache 2 license and is copyleft {{ site.time | date: "%Y" }} Twitter. Boiled down to smaller chunks, it can be described with the following conditions.</p>
 
     <div class="row">
       <div class="col-12 col-lg-6">

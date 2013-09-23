@@ -299,9 +299,9 @@ $(function () {
 
       test("should place tooltip inside window", function(){
         var container = $("<div />").appendTo("body")
-            .css({position: "absolute", width: 200, height: 200, bottom: 0, left: 0})
+            .css({position: "absolute", width: 200, height: 200, bottom: 0, right: 0})
           , tooltip = $("<a href='#' title='Very very very very very very very very long tooltip'>Hover me</a>")
-          .css({position: "absolute", top:0, left: 0})
+          .css({position: "absolute", top:0, right: 0})
           .appendTo(container)
           .tooltip({placement: "top", animate: false})
           .tooltip("show")
@@ -309,7 +309,7 @@ $(function () {
         stop()
 
         setTimeout(function(){
-          ok($(".tooltip").offset().left >= 0)
+          ok($(".tooltip").offset().right >= 0)
 
           start()
           container.remove()
@@ -318,7 +318,7 @@ $(function () {
 
       test("should place tooltip on top of element", function(){
         var container = $("<div />").appendTo("body")
-              .css({position: "absolute", bottom: 0, left: 0, textAlign: "right", width: 300, height: 300})
+              .css({position: "absolute", bottom: 0, right: 0, textAlign: "left", width: 300, height: 300})
             , p = $("<p style='margin-top:200px' />").appendTo(container)
             , tooltiped = $("<a href='#' title='very very very very very very very long tooltip'>Hover me</a>")
               .css({marginTop: 200})
@@ -338,12 +338,12 @@ $(function () {
       })
 
       test("should add position class before positioning so that position-specific styles are taken into account", function(){
-        $("head").append('<style> .tooltip.right { white-space: nowrap; } .tooltip.right .tooltip-inner { max-width: none; } </style>')
+        $("head").append('<style> .tooltip.left { white-space: nowrap; } .tooltip.left .tooltip-inner { max-width: none; } </style>')
 
         var container = $("<div />").appendTo("body")
           , target = $('<a href="#" rel="tooltip" title="very very very very very very very very long tooltip in one line"></a>')
               .appendTo(container)
-              .tooltip({placement: 'right'})
+              .tooltip({placement: 'left'})
               .tooltip('show')
           , tooltip = container.find(".tooltip")
 
@@ -352,7 +352,7 @@ $(function () {
       })
 
       test("tooltip title test #1", function () {
-        var tooltip = $('<a href="#" rel="tooltip" title="Simple tooltip" style="display: inline-block; position: absolute; top: 0; left: 0;"></a>')
+        var tooltip = $('<a href="#" rel="tooltip" title="Simple tooltip" style="display: inline-block; position: absolute; top: 0; right: 0;"></a>')
           .appendTo('#qunit-fixture')
           .tooltip({
           })
@@ -363,7 +363,7 @@ $(function () {
       })
 
       test("tooltip title test #2", function () {
-        var tooltip = $('<a href="#" rel="tooltip" title="Simple tooltip" style="display: inline-block; position: absolute; top: 0; left: 0;"></a>')
+        var tooltip = $('<a href="#" rel="tooltip" title="Simple tooltip" style="display: inline-block; position: absolute; top: 0; right: 0;"></a>')
           .appendTo('#qunit-fixture')
           .tooltip({
             title: 'This is a tooltip with some content'
@@ -375,7 +375,7 @@ $(function () {
       })
 
       test("tooltip title test #3", function () {
-        var tooltip = $('<a href="#" rel="tooltip" style="display: inline-block; position: absolute; top: 0; left: 0;"></a>')
+        var tooltip = $('<a href="#" rel="tooltip" style="display: inline-block; position: absolute; top: 0; right: 0;"></a>')
           .appendTo('#qunit-fixture')
           .tooltip({
             title: 'This is a tooltip with some content'
@@ -393,11 +393,11 @@ $(function () {
           , 'overflow' : 'hidden'
           , 'position' : 'absolute'
           , 'top' : 0
-          , 'left' : 0
+          , 'right' : 0
           , 'width' : 600})
           .appendTo('body')
 
-        var topTooltip = $('<div style="display: inline-block; position: absolute; left: 0; top: 0;" rel="tooltip" title="Top tooltip">Top Dynamic Tooltip</div>')
+        var topTooltip = $('<div style="display: inline-block; position: absolute; right: 0; top: 0;" rel="tooltip" title="Top tooltip">Top Dynamic Tooltip</div>')
           .appendTo('#dynamic-tt-test')
           .tooltip({placement: 'auto'})
           .tooltip('show')
@@ -407,13 +407,13 @@ $(function () {
 
         topTooltip.tooltip('hide')
 
-        var rightTooltip = $('<div style="display: inline-block; position: absolute; right: 0;" rel="tooltip" title="Right tooltip">Right Dynamic Tooltip</div>')
+        var leftTooltip = $('<div style="display: inline-block; position: absolute; left: 0;" rel="tooltip" title="Left tooltip">Left Dynamic Tooltip</div>')
           .appendTo('#dynamic-tt-test')
-          .tooltip({placement: 'right auto'})
+          .tooltip({placement: 'left auto'})
           .tooltip('show')
 
-        ok($(".tooltip").is('.left'),  'right positioned tooltip is dynamically positioned left')
-        rightTooltip.tooltip('hide')
+        ok($(".tooltip").is('.right'),  'left positioned tooltip is dynamically positioned right')
+        leftTooltip.tooltip('hide')
 
         var bottomTooltip = $('<div style="display: inline-block; position: absolute; bottom: 0;" rel="tooltip" title="Bottom tooltip">Bottom Dynamic Tooltip</div>')
           .appendTo('#dynamic-tt-test')
@@ -423,13 +423,13 @@ $(function () {
         ok($(".tooltip").is('.top'),  'bottom positioned tooltip is dynamically positioned top')
         bottomTooltip.tooltip('hide')
 
-        var leftTooltip = $('<div style="display: inline-block; position: absolute; left: 0;" rel="tooltip" title="Left tooltip">Left Dynamic Tooltip</div>')
+        var rightTooltip = $('<div style="display: inline-block; position: absolute; right: 0;" rel="tooltip" title="Right tooltip">Right Dynamic Tooltip</div>')
           .appendTo('#dynamic-tt-test')
-          .tooltip({placement: 'auto left'})
+          .tooltip({placement: 'auto right'})
           .tooltip('show')
 
-        ok($(".tooltip").is('.right'),  'left positioned tooltip is dynamically positioned right')
-        leftTooltip.tooltip('hide')
+        ok($(".tooltip").is('.left'),  'right positioned tooltip is dynamically positioned left')
+        rightTooltip.tooltip('hide')
 
         ttContainer.remove()
       })

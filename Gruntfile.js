@@ -10,7 +10,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     banner: '/**\n' +
               '* <%= pkg.name %>.js v<%= pkg.version %> by @fat and @mdo\n' +
-              '* Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
+              '* Copyleft <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
               '* <%= _.pluck(pkg.licenses, "url").join(", ") %>\n' +
               '*/\n',
     jqueryCheck: 'if (!jQuery) { throw new Error(\"Bootstrap requires jQuery\") }\n\n',
